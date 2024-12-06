@@ -51,24 +51,24 @@ React Context API is used to manage filters, search, and sort state in ItemConte
 
 # Folder Structure
 src/  
-├── components/          # Reusable UI components  
-│   ├── Filters/         # Individual filter components  
+├── components/           
+│   ├── Filters/        
 │   │   ├── CategoryFilter.js 
 │   │   └── Filter.js
 │   │   └── PriceFilter.js  
-│   ├── SearchBar.js     # Search input with debounce  
-│   ├── SortOptions.js   # Dropdown for sorting  
-│   └── ItemTable.js     # Table displaying filtered items  
-├── context/             # Context API for global state management  
-│   └── ItemContext.js   # Handles state for filters, sort, and search  
-├── utils/               # Helper functions and utilities  
-│   ├── debounce.js      # Debounce utility function  
-│   ├── filtersUtils.js  # Utilities for filtering data  
-│   └── sortUtils.js     # Utilities for sorting data  
-├── constants/           # App-wide constants  
-│   └── data.js          # Initial data array  
-├── App.js               # Root application component  
-└── index.js             # Entry point 
+│   ├── SearchBar.js     
+│   ├── SortOptions.js   
+│   └── ItemTable.js       
+├── context/               
+│   └── ItemContext.js   
+├── utils/                
+│   ├── debounce.js       
+│   ├── filtersUtils.js  
+│   └── sortUtils.js     
+├── constants/             
+│   └── data.js            
+├── App.js                
+└── index.js            
 
 # Key Files
 ## 1. utils/debounce.js
