@@ -54,8 +54,8 @@ src/
 ├── components/           
 │   ├── Filters/        
 │   │   ├── CategoryFilter.js 
-│   │   └── Filter.js
-│   │   └── PriceFilter.js  
+│   │   ├── Filter.js
+│   │   ├── PriceFilter.js  
 │   ├── SearchBar.js     
 │   ├── SortOptions.js   
 │   └── ItemTable.js       
