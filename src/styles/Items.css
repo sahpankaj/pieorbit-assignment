@@ -1,0 +1,52 @@
+/* Container styles */
+.items-container {
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+/* Table styles */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+/* Header row styles */
+.items-header-row {
+  background-color: #f5f5f5;
+}
+
+.items-header-cell {
+  padding: 8px 16px;
+  text-align: left;
+  color: #4a4a4a;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Row styles */
+.items-row {
+  border-bottom: 1px solid #ddd;
+}
+
+.row-even {
+  background-color: #fafafa;
+}
+
+.row-odd {
+  background-color: white;
+}
+
+/* Cell styles */
+.items-cell {
+  padding: 8px 16px;
+  color: #4a4a4a;
+}
+
+/* No product message */
+.items-no-product {
+  text-align: center;
+  color: #888;
+  margin: 16px 0;
+}

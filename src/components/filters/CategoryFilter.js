@@ -19,7 +19,7 @@ const CategoryFilter = () => {
       <select
         id="categoryFilter"
         onChange={handleCategoryChange}
-        className="bg-gray-100 border border-gray-300 rounded px-2 py-1 focus:outline-none"
+        className="select-filter"
       >
         <option value="">All Categories</option>
         {categories.map((category) => (

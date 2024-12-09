@@ -1,0 +1,26 @@
+.filters-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.filters-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.select-filter {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.select-filter:focus {
+  outline: none;
+  border: none;
+}

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ItemContext } from "../../context/ItemContext";
+import '../../styles/Filters.css'
 
 const PriceFilter = () => {
   const { updateFilters } = useContext(ItemContext);
@@ -14,7 +15,7 @@ const PriceFilter = () => {
       <select
         id="priceFilter"
         onChange={handlePriceRangeChange}
-        className="bg-gray-100 border border-gray-300 rounded px-2 py-1 focus:outline-none"
+        className="select-filter"
       >
         <option value="0-1000">All Prices</option>
         <option value="0-50">Under $50</option>

@@ -1,35 +1,34 @@
 import React from "react";
+import '../styles/Items.css';
 
 const Items = ({ items }) => {
   if (items.length === 0) {
-    return <p className="text-center text-gray-500">No Product found.</p>;
+    return <p className="items-no-product">No Product found.</p>;
   }
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white border border-gray-200">
+    <div className="items-container">
+      <table className="items-table">
         <thead>
-          <tr className="bg-gray-100">
-            <th className="px-4 py-2 text-left text-gray-600">Name</th>
-            <th className="px-4 py-2 text-left text-gray-600">Category</th>
-            <th className="px-4 py-2 text-left text-gray-600">Price</th>
-            <th className="px-4 py-2 text-left text-gray-600">Date Added</th>
+          <tr className="items-header-row">
+            <th className="items-header-cell">Name</th>
+            <th className="items-header-cell">Category</th>
+            <th className="items-header-cell">Price</th>
+            <th className="items-header-cell">Date Added</th>
           </tr>
         </thead>
         <tbody>
           {items.map((item, index) => (
             <tr
               key={item.id}
-              className={`${
-                index % 2 === 0 ? "bg-gray-50" : "bg-white"
-              } border-b`}
+              className={`items-row ${index % 2 === 0 ? "row-even" : "row-odd"}`}
             >
-              <td className="px-4 py-2 text-gray-700">{item.name}</td>
-              <td className="px-4 py-2 text-gray-700">{item.category}</td>
-              <td className="px-4 py-2 text-gray-700">
+              <td className="items-cell">{item.name}</td>
+              <td className="items-cell">{item.category}</td>
+              <td className="items-cell">
                 ${item.price.toFixed(2)}
               </td>
-              <td className="px-4 py-2 text-gray-700">
+              <td className="items-cell">
                 {new Date(item.dateAdded).toLocaleDateString()}
               </td>
             </tr>

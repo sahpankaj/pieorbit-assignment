@@ -1,0 +1,28 @@
+/* Container */
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Label */
+.sort-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+/* Select */
+.sort-select {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sort-select:focus {
+  outline: none;
+  border: none;
+}

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ItemContext } from "../context/ItemContext";
+import '../styles/SortOptions.css'
 
 const SortOptions = () => {
   const { updateFilters } = useContext(ItemContext);
@@ -9,14 +10,14 @@ const SortOptions = () => {
   };
 
   return (
-    <div className="flex items-center gap-1 ">
-      <label htmlFor="sortBy" className="text-sm font-medium text-gray-700">
+    <div className="sort-options">
+      <label htmlFor="sortBy" className="sort-label">
         Sort By
       </label>
       <select
         id="sortBy"
         onChange={handleSortChange}
-        className="p-1 border rounded-md bg-gray-100 focus:outline-none "
+        className="sort-select"
       >
         <option value="nameAsc">Asc: A-Z</option>
         <option value="nameDesc">Des: Z-A</option>

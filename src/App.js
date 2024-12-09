@@ -7,6 +7,7 @@ import SearchBar from './components/SearchBar';
 import SortOptions from './components/SortOptions';
 import Items from './components/Items';
 import Filters from './components/filters/Filters';
+import './App.css'
 
 
 function App() {
@@ -22,10 +23,10 @@ function App() {
   );
 
   return (
-    <div className=" container mx-auto px-4 py-6">
-      <div className="flex flex-col space-y-4">
+    <div className="app-container">
+      <div className="app-content">
         <SearchBar />
-        <div className="flex flex-col gap-3 md:flex-row md:gap-0 justify-between">
+        <div className="filters-sort-container">
           <Filters />
           <SortOptions />
         </div>

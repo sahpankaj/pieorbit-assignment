@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { debounce } from "../utils/debounce";
 import { ItemContext } from "../context/ItemContext";
 import { FaSearch } from "react-icons/fa";
+import '../styles/SearchBar.css'
 
 const SearchBar = () => {
   const { updateFilters } = useContext(ItemContext);
@@ -17,8 +18,8 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="relative w-full md:w-[50%]">
-      <span className="absolute inset-y-0 right-4 flex items-center pl-3 text-gray-400">
+    <div className="search-bar">
+      <span className="search-icon">
         <FaSearch />
       </span>
       <input
@@ -26,7 +27,7 @@ const SearchBar = () => {
         value={searchInput}
         placeholder="Search product..."
         onChange={onChange}
-        className="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="search-input"
       />
     </div>
   );
