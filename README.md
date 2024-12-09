@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# React Filterable List with Search, Sort, and Debounce
+This project is a React-based filterable list application designed with performance, scalability, and modularity in mind. It uses SOLID principles and a Single Responsibility Principle (SRP)-oriented folder structure, ensuring a clean and maintainable codebase.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
+## Dynamic Filtering
+Filter items by category and price range dynamically.
+Categories are fetched from the initial data to avoid hardcoding.
 
-## Available Scripts
+## Sorting Options
+Sort items alphabetically (A-Z, Z-A) and by price (Low to High, High to Low).
 
-In the project directory, you can run:
+## Search Functionality
+Search items by name with a debounce to optimize performance.
 
-### `npm start`
+## Responsive and User-Friendly UI
+Built with Tailwind CSS for responsive and attractive design.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Scalable Architecture
+Modular design with reusable components, utilities, and context for global state management.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Approach
+## 1. SOLID Principles in Action
+### Single Responsibility Principle (SRP)
+Each file, utility, or component is designed for one specific task:
+SearchBar.js: Handles search input logic.
+CategoryFilter.js: Manages category-based filtering.
+PriceFilter.js: Focuses on price range filtering.
 
-### `npm test`
+### Open/Closed Principle
+Components are open for extension but closed for modification:
+Adding new filters, sort options, or features is easy without modifying the existing structure.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Liskov Substitution Principle
+Any filter or sorting logic can be replaced or extended without affecting the app’s core.
 
-### `npm run build`
+### Interface Segregation Principle
+Context, utilities, and components handle their respective tasks efficiently, without overlap.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Dependency Inversion Principle
+Core components rely on abstractions (context and utilities) rather than concrete implementations, enhancing flexibility.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 2. Optimization Techniques
+### Debounced Search:
+Implements a debounce in utils/debounce.js to delay search actions, reducing unnecessary re-renders.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Dynamic Categories:
+Categories are derived from data.js instead of hardcoding, allowing future flexibility in expanding datasets.
 
-### `npm run eject`
+### Centralized State Management:
+React Context API is used to manage filters, search, and sort state in ItemContext.js.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Folder Structure
+src/  
+├── components/           
+│   ├── Filters/        
+│   │   ├── CategoryFilter.js 
+│   │   ├── Filter.js
+│   │   ├── PriceFilter.js  
+│   ├── SearchBar.js     
+│   ├── SortOptions.js   
+│   └── ItemTable.js       
+├── context/               
+│   └── ItemContext.js   
+├── utils/                
+│   ├── debounce.js       
+│   ├── filtersUtils.js  
+│   └── sortUtils.js     
+├── constants/             
+│   └── data.js            
+├── App.js                
+└── index.js            
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Key Files
+## 1. utils/debounce.js
+A utility function to delay execution of the search input logic until the user stops typing.
+## 2. utils/filtersUtils.js
+Contains reusable functions to filter data based on categories and price ranges.
+## 3. utils/sortUtils.js
+Utility functions for sorting data by name or price in ascending/descending order.
+## 4. constants/data.js
+Holds the initial data array, containing item details like name, price, and category.
+ 
+# How to Run
+## Clone the Repository
+git clone https://github.com/sahpankaj/pieorbit-assignment.git  
+cd pieorbit-assignment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Install Dependencies
+npm install  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Run the Development Server
+npm start  
 
-## Learn More
+## Build for Production
+npm run build  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Future Enhancements
+## Server-Side Filtering and Sorting
+Migrate filtering and sorting to the backend for handling large datasets.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Pagination
+Implement pagination for better performance with extensive data.
 
-### Code Splitting
+## Improved Accessibility
+Add ARIA attributes to enhance usability for assistive technologies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Enhanced Search
+Introduce fuzzy search for better search results.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
